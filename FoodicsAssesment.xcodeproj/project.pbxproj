@@ -42,6 +42,13 @@
 		EDCBE9A4258B507600FC618B /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE9A3258B507600FC618B /* NetworkManagerProtocol.swift */; };
 		EDCBE9AB258B541600FC618B /* BaseCodableUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE9AA258B541600FC618B /* BaseCodableUseCase.swift */; };
 		EDCBE9B2258B545F00FC618B /* BaseUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE9B1258B545F00FC618B /* BaseUseCaseProtocol.swift */; };
+		EDCBE9BB258B575000FC618B /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE9BA258B575000FC618B /* BasePresenter.swift */; };
+		EDCBE9C5258B57CA00FC618B /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE9C4258B57CA00FC618B /* BaseVC.swift */; };
+		EDCBE9CB258B57FF00FC618B /* BaseViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE9CA258B57FF00FC618B /* BaseViewProtocol.swift */; };
+		EDCBE9D5258B595600FC618B /* LoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE9D3258B595600FC618B /* LoaderView.swift */; };
+		EDCBE9D6258B595600FC618B /* LoaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDCBE9D4258B595600FC618B /* LoaderView.xib */; };
+		EDCBE9DD258B5C9200FC618B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE9DB258B5C9200FC618B /* ErrorView.swift */; };
+		EDCBE9DE258B5C9200FC618B /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDCBE9DC258B5C9200FC618B /* ErrorView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +107,13 @@
 		EDCBE9A3258B507600FC618B /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
 		EDCBE9AA258B541600FC618B /* BaseCodableUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCodableUseCase.swift; sourceTree = "<group>"; };
 		EDCBE9B1258B545F00FC618B /* BaseUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUseCaseProtocol.swift; sourceTree = "<group>"; };
+		EDCBE9BA258B575000FC618B /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		EDCBE9C4258B57CA00FC618B /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
+		EDCBE9CA258B57FF00FC618B /* BaseViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewProtocol.swift; sourceTree = "<group>"; };
+		EDCBE9D3258B595600FC618B /* LoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoaderView.swift; sourceTree = "<group>"; };
+		EDCBE9D4258B595600FC618B /* LoaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoaderView.xib; sourceTree = "<group>"; };
+		EDCBE9DB258B5C9200FC618B /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		EDCBE9DC258B5C9200FC618B /* ErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +252,7 @@
 		EDCBE904258B45B600FC618B /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
+				EDCBE9B9258B573900FC618B /* UI Layer */,
 				EDCBE9A9258B53E700FC618B /* Domain Layer */,
 				EDCBE905258B460700FC618B /* Data Layer */,
 			);
@@ -331,6 +346,8 @@
 		EDCBE94B258B4C2F00FC618B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				EDCBE9DA258B5C6500FC618B /* Error View */,
+				EDCBE9D2258B594C00FC618B /* Loader View */,
 				EDCBE94C258B4C3D00FC618B /* Constants.swift */,
 			);
 			path = Extensions;
@@ -396,6 +413,50 @@
 				EDCBE9B1258B545F00FC618B /* BaseUseCaseProtocol.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		EDCBE9B9258B573900FC618B /* UI Layer */ = {
+			isa = PBXGroup;
+			children = (
+				EDCBE9C3258B57A700FC618B /* View Layer */,
+				EDCBE9BF258B575400FC618B /* Presententation Layer */,
+			);
+			path = "UI Layer";
+			sourceTree = "<group>";
+		};
+		EDCBE9BF258B575400FC618B /* Presententation Layer */ = {
+			isa = PBXGroup;
+			children = (
+				EDCBE9BA258B575000FC618B /* BasePresenter.swift */,
+			);
+			path = "Presententation Layer";
+			sourceTree = "<group>";
+		};
+		EDCBE9C3258B57A700FC618B /* View Layer */ = {
+			isa = PBXGroup;
+			children = (
+				EDCBE9C4258B57CA00FC618B /* BaseVC.swift */,
+				EDCBE9CA258B57FF00FC618B /* BaseViewProtocol.swift */,
+			);
+			path = "View Layer";
+			sourceTree = "<group>";
+		};
+		EDCBE9D2258B594C00FC618B /* Loader View */ = {
+			isa = PBXGroup;
+			children = (
+				EDCBE9D3258B595600FC618B /* LoaderView.swift */,
+				EDCBE9D4258B595600FC618B /* LoaderView.xib */,
+			);
+			path = "Loader View";
+			sourceTree = "<group>";
+		};
+		EDCBE9DA258B5C6500FC618B /* Error View */ = {
+			isa = PBXGroup;
+			children = (
+				EDCBE9DB258B5C9200FC618B /* ErrorView.swift */,
+				EDCBE9DC258B5C9200FC618B /* ErrorView.xib */,
+			);
+			path = "Error View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -511,10 +572,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EDCBE900258B45AA00FC618B /* Resolver.md in Resources */,
+				EDCBE9D6258B595600FC618B /* LoaderView.xib in Resources */,
 				EDCBE8A5258B403000FC618B /* LaunchScreen.storyboard in Resources */,
 				EDCBE977258B4F5800FC618B /* APIRequestProviderREADME.md in Resources */,
 				EDCBE8A2258B403000FC618B /* Assets.xcassets in Resources */,
 				EDCBE91D258B47A300FC618B /* Debug.xcconfig in Resources */,
+				EDCBE9DE258B5C9200FC618B /* ErrorView.xib in Resources */,
 				EDCBE8A0258B402D00FC618B /* Main.storyboard in Resources */,
 				EDCBE955258B4D3A00FC618B /* ApiRequestREADME.md in Resources */,
 			);
@@ -547,15 +610,20 @@
 				EDCBE932258B48B900FC618B /* InternetManagerProtocol.swift in Sources */,
 				EDCBE8F1258B451800FC618B /* Resolver.swift in Sources */,
 				EDCBE9B2258B545F00FC618B /* BaseUseCaseProtocol.swift in Sources */,
+				EDCBE9BB258B575000FC618B /* BasePresenter.swift in Sources */,
 				EDCBE899258B402D00FC618B /* AppDelegate.swift in Sources */,
 				EDCBE96C258B4E4200FC618B /* APIRequestProviderError.swift in Sources */,
+				EDCBE9C5258B57CA00FC618B /* BaseVC.swift in Sources */,
 				EDCBE937258B490400FC618B /* InternetManager.swift in Sources */,
+				EDCBE9DD258B5C9200FC618B /* ErrorView.swift in Sources */,
 				EDCBE93C258B490A00FC618B /* Reachability.swift in Sources */,
 				EDCBE942258B4BB400FC618B /* APIRequestProtocol.swift in Sources */,
 				EDCBE89B258B402D00FC618B /* SceneDelegate.swift in Sources */,
 				EDCBE8F8258B454200FC618B /* Resolver+ResolverRegistering.swift in Sources */,
 				EDCBE99F258B506000FC618B /* APIManager.swift in Sources */,
 				EDCBE981258B4F8C00FC618B /* APIRequestProviderProtocol.swift in Sources */,
+				EDCBE9D5258B595600FC618B /* LoaderView.swift in Sources */,
+				EDCBE9CB258B57FF00FC618B /* BaseViewProtocol.swift in Sources */,
 				EDCBE988258B4FFF00FC618B /* NetworkContainers.swift in Sources */,
 				EDCBE910258B46CE00FC618B /* Environment.swift in Sources */,
 				EDCBE9A4258B507600FC618B /* NetworkManagerProtocol.swift in Sources */,
