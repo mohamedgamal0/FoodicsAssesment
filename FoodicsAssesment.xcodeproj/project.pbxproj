@@ -3,18 +3,29 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		EDCBE899258B402D00FC618B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE898258B402D00FC618B /* AppDelegate.swift */; };
 		EDCBE89B258B402D00FC618B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE89A258B402D00FC618B /* SceneDelegate.swift */; };
-		EDCBE89D258B402D00FC618B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE89C258B402D00FC618B /* ViewController.swift */; };
 		EDCBE8A0258B402D00FC618B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDCBE89E258B402D00FC618B /* Main.storyboard */; };
 		EDCBE8A2258B403000FC618B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDCBE8A1258B403000FC618B /* Assets.xcassets */; };
 		EDCBE8A5258B403000FC618B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDCBE8A3258B403000FC618B /* LaunchScreen.storyboard */; };
 		EDCBE8B0258B403000FC618B /* FoodicsAssesmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE8AF258B403000FC618B /* FoodicsAssesmentTests.swift */; };
 		EDCBE8BB258B403000FC618B /* FoodicsAssesmentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE8BA258B403000FC618B /* FoodicsAssesmentUITests.swift */; };
+		EDCBE8E0258B448E00FC618B /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = EDCBE8DF258B448E00FC618B /* Kingfisher */; };
+		EDCBE8E6258B44AA00FC618B /* Promises in Frameworks */ = {isa = PBXBuildFile; productRef = EDCBE8E5258B44AA00FC618B /* Promises */; };
+		EDCBE8E8258B44AA00FC618B /* FBLPromises in Frameworks */ = {isa = PBXBuildFile; productRef = EDCBE8E7258B44AA00FC618B /* FBLPromises */; };
+		EDCBE8F1258B451800FC618B /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE8F0258B451800FC618B /* Resolver.swift */; };
+		EDCBE8F8258B454200FC618B /* Resolver+ResolverRegistering.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE8F7258B454200FC618B /* Resolver+ResolverRegistering.swift */; };
+		EDCBE900258B45AA00FC618B /* Resolver.md in Resources */ = {isa = PBXBuildFile; fileRef = EDCBE8FF258B45AA00FC618B /* Resolver.md */; };
+		EDCBE910258B46CE00FC618B /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE90F258B46CE00FC618B /* Environment.swift */; };
+		EDCBE915258B46F600FC618B /* PlistKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE914258B46F600FC618B /* PlistKey.swift */; };
+		EDCBE91D258B47A300FC618B /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = EDCBE91C258B47A300FC618B /* Debug.xcconfig */; };
+		EDCBE932258B48B900FC618B /* InternetManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE931258B48B900FC618B /* InternetManagerProtocol.swift */; };
+		EDCBE937258B490400FC618B /* InternetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE936258B490400FC618B /* InternetManager.swift */; };
+		EDCBE93C258B490A00FC618B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE93B258B490A00FC618B /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +49,6 @@
 		EDCBE895258B402D00FC618B /* FoodicsAssesment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodicsAssesment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCBE898258B402D00FC618B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDCBE89A258B402D00FC618B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EDCBE89C258B402D00FC618B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EDCBE89F258B402D00FC618B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EDCBE8A1258B403000FC618B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EDCBE8A4258B403000FC618B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +59,15 @@
 		EDCBE8B6258B403000FC618B /* FoodicsAssesmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FoodicsAssesmentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCBE8BA258B403000FC618B /* FoodicsAssesmentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodicsAssesmentUITests.swift; sourceTree = "<group>"; };
 		EDCBE8BC258B403000FC618B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EDCBE8F0258B451800FC618B /* Resolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
+		EDCBE8F7258B454200FC618B /* Resolver+ResolverRegistering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Resolver+ResolverRegistering.swift"; sourceTree = "<group>"; };
+		EDCBE8FF258B45AA00FC618B /* Resolver.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Resolver.md; sourceTree = "<group>"; };
+		EDCBE90F258B46CE00FC618B /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		EDCBE914258B46F600FC618B /* PlistKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistKey.swift; sourceTree = "<group>"; };
+		EDCBE91C258B47A300FC618B /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		EDCBE931258B48B900FC618B /* InternetManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetManagerProtocol.swift; sourceTree = "<group>"; };
+		EDCBE936258B490400FC618B /* InternetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InternetManager.swift; sourceTree = "<group>"; };
+		EDCBE93B258B490A00FC618B /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +75,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDCBE8E8258B44AA00FC618B /* FBLPromises in Frameworks */,
+				EDCBE8E6258B44AA00FC618B /* Promises in Frameworks */,
+				EDCBE8E0258B448E00FC618B /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,13 +121,11 @@
 		EDCBE897258B402D00FC618B /* FoodicsAssesment */ = {
 			isa = PBXGroup;
 			children = (
-				EDCBE898258B402D00FC618B /* AppDelegate.swift */,
-				EDCBE89A258B402D00FC618B /* SceneDelegate.swift */,
-				EDCBE89C258B402D00FC618B /* ViewController.swift */,
-				EDCBE89E258B402D00FC618B /* Main.storyboard */,
-				EDCBE8A1258B403000FC618B /* Assets.xcassets */,
-				EDCBE8A3258B403000FC618B /* LaunchScreen.storyboard */,
-				EDCBE8A6258B403000FC618B /* Info.plist */,
+				EDCBE8CE258B416800FC618B /* App Delegates */,
+				EDCBE8CF258B419000FC618B /* Scenes */,
+				EDCBE8D4258B42C900FC618B /* Core */,
+				EDCBE90C258B468E00FC618B /* Config Files */,
+				EDCBE90B258B466C00FC618B /* Resources */,
 			);
 			path = FoodicsAssesment;
 			sourceTree = "<group>";
@@ -128,6 +148,136 @@
 			path = FoodicsAssesmentUITests;
 			sourceTree = "<group>";
 		};
+		EDCBE8CE258B416800FC618B /* App Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				EDCBE898258B402D00FC618B /* AppDelegate.swift */,
+				EDCBE89A258B402D00FC618B /* SceneDelegate.swift */,
+			);
+			path = "App Delegates";
+			sourceTree = "<group>";
+		};
+		EDCBE8CF258B419000FC618B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EDCBE8D0258B41A700FC618B /* Storyboards */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		EDCBE8D0258B41A700FC618B /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				EDCBE8A3258B403000FC618B /* LaunchScreen.storyboard */,
+				EDCBE89E258B402D00FC618B /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		EDCBE8D4258B42C900FC618B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				EDCBE8EF258B44E900FC618B /* Dependency Injection */,
+				EDCBE904258B45B600FC618B /* Architecture */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		EDCBE8EF258B44E900FC618B /* Dependency Injection */ = {
+			isa = PBXGroup;
+			children = (
+				EDCBE8F0258B451800FC618B /* Resolver.swift */,
+				EDCBE8F7258B454200FC618B /* Resolver+ResolverRegistering.swift */,
+				EDCBE8F5258B453300FC618B /* Docs */,
+			);
+			path = "Dependency Injection";
+			sourceTree = "<group>";
+		};
+		EDCBE8F5258B453300FC618B /* Docs */ = {
+			isa = PBXGroup;
+			children = (
+				EDCBE8FF258B45AA00FC618B /* Resolver.md */,
+			);
+			path = Docs;
+			sourceTree = "<group>";
+		};
+		EDCBE904258B45B600FC618B /* Architecture */ = {
+			isa = PBXGroup;
+			children = (
+				EDCBE905258B460700FC618B /* Data Layer */,
+			);
+			path = Architecture;
+			sourceTree = "<group>";
+		};
+		EDCBE905258B460700FC618B /* Data Layer */ = {
+			isa = PBXGroup;
+			children = (
+				EDCBE906258B460D00FC618B /* Network Layer */,
+			);
+			path = "Data Layer";
+			sourceTree = "<group>";
+		};
+		EDCBE906258B460D00FC618B /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+				EDCBE907258B464F00FC618B /* Internet Manger */,
+			);
+			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		EDCBE907258B464F00FC618B /* Internet Manger */ = {
+			isa = PBXGroup;
+			children = (
+				EDCBE936258B490400FC618B /* InternetManager.swift */,
+				EDCBE931258B48B900FC618B /* InternetManagerProtocol.swift */,
+				EDCBE92F258B489300FC618B /* Reachability */,
+			);
+			path = "Internet Manger";
+			sourceTree = "<group>";
+		};
+		EDCBE90B258B466C00FC618B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EDCBE8A1258B403000FC618B /* Assets.xcassets */,
+				EDCBE8A6258B403000FC618B /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EDCBE90C258B468E00FC618B /* Config Files */ = {
+			isa = PBXGroup;
+			children = (
+				EDCBE90E258B46B700FC618B /* Debug */,
+				EDCBE90D258B46AC00FC618B /* Utiltlites */,
+			);
+			path = "Config Files";
+			sourceTree = "<group>";
+		};
+		EDCBE90D258B46AC00FC618B /* Utiltlites */ = {
+			isa = PBXGroup;
+			children = (
+				EDCBE90F258B46CE00FC618B /* Environment.swift */,
+				EDCBE914258B46F600FC618B /* PlistKey.swift */,
+			);
+			path = Utiltlites;
+			sourceTree = "<group>";
+		};
+		EDCBE90E258B46B700FC618B /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				EDCBE91C258B47A300FC618B /* Debug.xcconfig */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		EDCBE92F258B489300FC618B /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				EDCBE93B258B490A00FC618B /* Reachability.swift */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,6 +294,11 @@
 			dependencies = (
 			);
 			name = FoodicsAssesment;
+			packageProductDependencies = (
+				EDCBE8DF258B448E00FC618B /* Kingfisher */,
+				EDCBE8E5258B44AA00FC618B /* Promises */,
+				EDCBE8E7258B44AA00FC618B /* FBLPromises */,
+			);
 			productName = FoodicsAssesment;
 			productReference = EDCBE895258B402D00FC618B /* FoodicsAssesment.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +370,10 @@
 				Base,
 			);
 			mainGroup = EDCBE88C258B402D00FC618B;
+			packageReferences = (
+				EDCBE8DE258B448E00FC618B /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				EDCBE8E4258B44AA00FC618B /* XCRemoteSwiftPackageReference "promises" */,
+			);
 			productRefGroup = EDCBE896258B402D00FC618B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,8 +390,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDCBE900258B45AA00FC618B /* Resolver.md in Resources */,
 				EDCBE8A5258B403000FC618B /* LaunchScreen.storyboard in Resources */,
 				EDCBE8A2258B403000FC618B /* Assets.xcassets in Resources */,
+				EDCBE91D258B47A300FC618B /* Debug.xcconfig in Resources */,
 				EDCBE8A0258B402D00FC618B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,9 +419,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDCBE89D258B402D00FC618B /* ViewController.swift in Sources */,
+				EDCBE915258B46F600FC618B /* PlistKey.swift in Sources */,
+				EDCBE932258B48B900FC618B /* InternetManagerProtocol.swift in Sources */,
+				EDCBE8F1258B451800FC618B /* Resolver.swift in Sources */,
 				EDCBE899258B402D00FC618B /* AppDelegate.swift in Sources */,
+				EDCBE937258B490400FC618B /* InternetManager.swift in Sources */,
+				EDCBE93C258B490A00FC618B /* Reachability.swift in Sources */,
 				EDCBE89B258B402D00FC618B /* SceneDelegate.swift in Sources */,
+				EDCBE8F8258B454200FC618B /* Resolver+ResolverRegistering.swift in Sources */,
+				EDCBE910258B46CE00FC618B /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,12 +600,13 @@
 		};
 		EDCBE8C0258B403000FC618B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDCBE91C258B47A300FC618B /* Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZMN78CD7T5;
-				INFOPLIST_FILE = FoodicsAssesment/Info.plist;
+				INFOPLIST_FILE = FoodicsAssesment/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -446,7 +614,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = MG.FoodicsAssesment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -457,7 +625,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZMN78CD7T5;
-				INFOPLIST_FILE = FoodicsAssesment/Info.plist;
+				INFOPLIST_FILE = FoodicsAssesment/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,7 +633,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = MG.FoodicsAssesment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -593,6 +761,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EDCBE8DE258B448E00FC618B /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.15.8;
+			};
+		};
+		EDCBE8E4258B44AA00FC618B /* XCRemoteSwiftPackageReference "promises" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/promises";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.11;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EDCBE8DF258B448E00FC618B /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDCBE8DE258B448E00FC618B /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		EDCBE8E5258B44AA00FC618B /* Promises */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDCBE8E4258B44AA00FC618B /* XCRemoteSwiftPackageReference "promises" */;
+			productName = Promises;
+		};
+		EDCBE8E7258B44AA00FC618B /* FBLPromises */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EDCBE8E4258B44AA00FC618B /* XCRemoteSwiftPackageReference "promises" */;
+			productName = FBLPromises;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EDCBE88D258B402D00FC618B /* Project object */;
 }
