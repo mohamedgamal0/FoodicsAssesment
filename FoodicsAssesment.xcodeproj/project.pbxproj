@@ -40,6 +40,8 @@
 		EDCBE988258B4FFF00FC618B /* NetworkContainers.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE987258B4FFF00FC618B /* NetworkContainers.swift */; };
 		EDCBE99F258B506000FC618B /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE99E258B506000FC618B /* APIManager.swift */; };
 		EDCBE9A4258B507600FC618B /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE9A3258B507600FC618B /* NetworkManagerProtocol.swift */; };
+		EDCBE9AB258B541600FC618B /* BaseCodableUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE9AA258B541600FC618B /* BaseCodableUseCase.swift */; };
+		EDCBE9B2258B545F00FC618B /* BaseUseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE9B1258B545F00FC618B /* BaseUseCaseProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,8 @@
 		EDCBE987258B4FFF00FC618B /* NetworkContainers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkContainers.swift; sourceTree = "<group>"; };
 		EDCBE99E258B506000FC618B /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		EDCBE9A3258B507600FC618B /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
+		EDCBE9AA258B541600FC618B /* BaseCodableUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCodableUseCase.swift; sourceTree = "<group>"; };
+		EDCBE9B1258B545F00FC618B /* BaseUseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUseCaseProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +238,7 @@
 		EDCBE904258B45B600FC618B /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
+				EDCBE9A9258B53E700FC618B /* Domain Layer */,
 				EDCBE905258B460700FC618B /* Data Layer */,
 			);
 			path = Architecture;
@@ -374,6 +379,23 @@
 				EDCBE9A3258B507600FC618B /* NetworkManagerProtocol.swift */,
 			);
 			path = "Network Manger";
+			sourceTree = "<group>";
+		};
+		EDCBE9A9258B53E700FC618B /* Domain Layer */ = {
+			isa = PBXGroup;
+			children = (
+				EDCBE9AF258B541A00FC618B /* UseCases */,
+			);
+			path = "Domain Layer";
+			sourceTree = "<group>";
+		};
+		EDCBE9AF258B541A00FC618B /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				EDCBE9AA258B541600FC618B /* BaseCodableUseCase.swift */,
+				EDCBE9B1258B545F00FC618B /* BaseUseCaseProtocol.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -524,6 +546,7 @@
 				EDCBE947258B4BDE00FC618B /* APIAuthorization.swift in Sources */,
 				EDCBE932258B48B900FC618B /* InternetManagerProtocol.swift in Sources */,
 				EDCBE8F1258B451800FC618B /* Resolver.swift in Sources */,
+				EDCBE9B2258B545F00FC618B /* BaseUseCaseProtocol.swift in Sources */,
 				EDCBE899258B402D00FC618B /* AppDelegate.swift in Sources */,
 				EDCBE96C258B4E4200FC618B /* APIRequestProviderError.swift in Sources */,
 				EDCBE937258B490400FC618B /* InternetManager.swift in Sources */,
@@ -536,6 +559,7 @@
 				EDCBE988258B4FFF00FC618B /* NetworkContainers.swift in Sources */,
 				EDCBE910258B46CE00FC618B /* Environment.swift in Sources */,
 				EDCBE9A4258B507600FC618B /* NetworkManagerProtocol.swift in Sources */,
+				EDCBE9AB258B541600FC618B /* BaseCodableUseCase.swift in Sources */,
 				EDCBE971258B4E9B00FC618B /* APIMangerError.swift in Sources */,
 				EDCBE95A258B4D5E00FC618B /* BaseAPIRequest.swift in Sources */,
 				EDCBE94D258B4C3D00FC618B /* Constants.swift in Sources */,
