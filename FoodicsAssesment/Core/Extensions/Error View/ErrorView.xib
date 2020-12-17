@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ErrorView" customModule="Icon_Shop" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SE0-wh-FVC">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="DkE-LL-AzL">
+                            <rect key="frame" x="132" y="302" width="150" height="214"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Refresh_icon" translatesAutoresizingMaskIntoConstraints="NO" id="k0k-kS-KXY">
+                                    <rect key="frame" x="47.5" y="0.0" width="55" height="55"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="55" id="FML-W0-BOv"/>
+                                        <constraint firstAttribute="width" constant="55" id="mdh-YR-WSx"/>
+                                    </constraints>
+                                </imageView>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="gPX-BQ-T9v">
+                                    <rect key="frame" x="21.5" y="86" width="107.5" height="57"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ErrorLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FPM-IB-KT3">
+                                            <rect key="frame" x="0.0" y="0.0" width="107.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubTitle Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84e-9q-ql3">
+                                            <rect key="frame" x="0.0" y="36.5" width="107.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2K-jZ-ai1">
+                                    <rect key="frame" x="0.0" y="174" width="150" height="40"/>
+                                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="150" id="0FF-4K-ApC"/>
+                                        <constraint firstAttribute="height" constant="40" id="zHd-Bb-iFD"/>
+                                    </constraints>
+                                    <state key="normal" title="Try Again">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="tryAgainButtonTapped" destination="iN0-l3-epB" eventType="touchUpInside" id="7p9-nn-hLz"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="DkE-LL-AzL" firstAttribute="centerX" secondItem="SE0-wh-FVC" secondAttribute="centerX" id="3hl-yN-FAm"/>
+                        <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="DkE-LL-AzL" secondAttribute="trailing" constant="20" id="Ekx-VN-uKe"/>
+                        <constraint firstItem="DkE-LL-AzL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="SE0-wh-FVC" secondAttribute="leadingMargin" constant="20" id="IJs-zE-0Ni"/>
+                        <constraint firstItem="DkE-LL-AzL" firstAttribute="centerY" secondItem="SE0-wh-FVC" secondAttribute="centerY" id="LgE-NW-D3m"/>
+                        <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="DkE-LL-AzL" secondAttribute="bottom" constant="12" id="Miy-Ac-6Rz"/>
+                        <constraint firstItem="DkE-LL-AzL" firstAttribute="top" relation="greaterThanOrEqual" secondItem="SE0-wh-FVC" secondAttribute="topMargin" constant="12" id="U1Z-T3-ODf"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="SE0-wh-FVC" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="93V-Og-7Gs"/>
+                <constraint firstItem="SE0-wh-FVC" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="DIn-o7-jUG"/>
+                <constraint firstItem="SE0-wh-FVC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="sga-Vw-9cp"/>
+                <constraint firstItem="SE0-wh-FVC" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="vBd-qD-WHb"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="errorLabel" destination="FPM-IB-KT3" id="BAW-xd-azC"/>
+                <outlet property="errorSubtitle" destination="84e-9q-ql3" id="ijH-yF-WUz"/>
+                <outlet property="refeshImage" destination="k0k-kS-KXY" id="92d-Ih-yT8"/>
+                <outlet property="tryAgainButton" destination="i2K-jZ-ai1" id="eUI-6t-nzr"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="113.83928571428571"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Refresh_icon" width="67" height="67"/>
+    </resources>
+</document>
