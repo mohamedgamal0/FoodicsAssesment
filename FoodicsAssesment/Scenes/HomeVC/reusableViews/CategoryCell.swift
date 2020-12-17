@@ -15,9 +15,9 @@ class CategoryCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.continerView.layer.cornerRadius = 4
+        self.continerView.layer.cornerRadius = 8
         self.continerView.layer.borderWidth = 3
-        self.continerView.layer.borderColor = UIColor(red: 0.64, green: 0.76, blue: 0.33, alpha: 1.00).cgColor
+        self.continerView.layer.borderColor = UIColor.black.cgColor
     }
     
     func configure(categories: Categories?) {

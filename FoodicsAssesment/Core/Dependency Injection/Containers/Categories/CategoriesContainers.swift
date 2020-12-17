@@ -7,7 +7,7 @@
 
 import Foundation
 extension Resolver {
-    static func registerHomeContainers() {
+    static func registerCategoriesContainers() {
         register { HomeVC() }
         register { HomePresenter() }
     }

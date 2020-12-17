@@ -11,4 +11,6 @@ protocol BaseViewProtocol: AnyObject {
     func showLoader()
     func hideLoader()
     func showErrorView( errorMessage: String)
+    func setNavBarImage()
+    func dismiss()
 }

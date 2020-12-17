@@ -11,6 +11,7 @@ extension Resolver: ResolverRegistering {
     
     public static func registerAllServices() {
         registerNetworkLayerContainers()
-        registerHomeContainers()
+        registerCategoriesContainers()
+        registerProductsContainers()
     }
 }

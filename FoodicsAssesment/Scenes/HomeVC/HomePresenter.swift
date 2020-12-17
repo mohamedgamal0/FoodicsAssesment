@@ -41,10 +41,10 @@ class HomePresenter: BasePresenter<HomeView> {
     func numberOfRows() -> Int {
         return categories.count
     }
-
+    
     func configureCategories(for indexPath: IndexPath) -> Categories {
         return categories[indexPath.row]
-
+        
     }
     
 }
