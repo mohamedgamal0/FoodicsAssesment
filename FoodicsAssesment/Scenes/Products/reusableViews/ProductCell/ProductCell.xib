@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ProductCell" customModule="FoodicsAssesment" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="238" height="206"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="238" height="206"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PWQ-vR-Ol0">
+                        <rect key="frame" x="0.0" y="0.0" width="238" height="206"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="fTz-NT-iM0">
+                                <rect key="frame" x="0.0" y="0.0" width="238" height="196"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="slE-RB-wub">
+                                        <rect key="frame" x="8" y="0.0" width="222" height="128"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmk-nZ-JsV">
+                                        <rect key="frame" x="91.5" y="132" width="55" height="39.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63x-hd-FAZ">
+                                        <rect key="frame" x="98.5" y="175.5" width="41.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="fTz-NT-iM0" secondAttribute="bottom" constant="10" id="1Jx-eJ-ghT"/>
+                            <constraint firstItem="fTz-NT-iM0" firstAttribute="leading" secondItem="PWQ-vR-Ol0" secondAttribute="leading" id="CDg-Ks-Gor"/>
+                            <constraint firstItem="fTz-NT-iM0" firstAttribute="top" secondItem="PWQ-vR-Ol0" secondAttribute="top" id="G1L-aL-hh4"/>
+                            <constraint firstAttribute="trailing" secondItem="fTz-NT-iM0" secondAttribute="trailing" id="bQX-wG-dEH"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="PWQ-vR-Ol0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="5aB-up-CoX"/>
+                <constraint firstItem="PWQ-vR-Ol0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="B4C-Mh-zpt"/>
+                <constraint firstAttribute="trailing" secondItem="PWQ-vR-Ol0" secondAttribute="trailing" id="UtL-ht-fes"/>
+                <constraint firstAttribute="bottom" secondItem="PWQ-vR-Ol0" secondAttribute="bottom" id="gIj-gZ-snJ"/>
+            </constraints>
+            <size key="customSize" width="238" height="206"/>
+            <connections>
+                <outlet property="continerView" destination="PWQ-vR-Ol0" id="e6u-Lp-cKj"/>
+                <outlet property="priceLabel" destination="63x-hd-FAZ" id="P9l-kV-sUe"/>
+                <outlet property="productImage" destination="slE-RB-wub" id="3KK-kT-ZrT"/>
+                <outlet property="productTitle" destination="jmk-nZ-JsV" id="jts-fg-6P3"/>
+            </connections>
+            <point key="canvasLocation" x="-50.724637681159422" y="61.607142857142854"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

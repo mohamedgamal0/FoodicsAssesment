@@ -61,4 +61,10 @@ class BaseVC<ViewProtocol, Presenter>: UIViewController, BaseViewProtocol where 
         showErrorView( errorSubTitle: errorMessage)
     }
     
+    func setNavBarImage() {
+        let logoImage = UIImage(named: "foodics-logo")
+        setNavigationItem(image: logoImage!, imageFrameSize: CGSize(width: 60, height: 30))
+    }
+    
+
 }

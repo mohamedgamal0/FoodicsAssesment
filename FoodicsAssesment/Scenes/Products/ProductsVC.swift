@@ -1,20 +1,24 @@
 //
-//  HomeVC.swift
+//  ProductsVC.swift
 //  FoodicsAssesment
 //
-//  Created by mohamed gamal on 12/17/20.
+//  Created mohamed gamal on 12/17/20.
 //
 
 import UIKit
 
-protocol HomeView: BaseViewProtocol {
+protocol ProductsVCDelegate: class {
+    func showPopUp(product: Products)
+}
+protocol ProductsView: BaseViewProtocol {
     func reloadCollectionView()
 }
-class HomeVC: BaseVC<HomeView, HomePresenter>, HomeView {
-    
-    // MARK: - Outlets
+
+class ProductsVC: BaseVC<ProductsView, ProductsPresenter>, ProductsView {
     @IBOutlet weak var collectionView: UICollectionView!
-    // MARK: - Lifecycle
+    // MARK: - Outlets
+    //MARK: - Vars
+    weak var delegate: ProductsVCDelegate?
     override func setupViews() {
         setupCollectionView()
         setNavBarImage()
@@ -22,7 +26,7 @@ class HomeVC: BaseVC<HomeView, HomePresenter>, HomeView {
     func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(cellType: CategoryCell.self)
+        collectionView.register(cellType: ProductCell.self)
     }
     func reloadCollectionView() {
         self.collectionView.reloadData()
@@ -30,7 +34,7 @@ class HomeVC: BaseVC<HomeView, HomePresenter>, HomeView {
 }
 
 // MARK: UICollectionViewDataSource
-extension HomeVC: UICollectionViewDataSource {
+extension ProductsVC: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -40,29 +44,28 @@ extension HomeVC: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: CategoryCell = collectionView.dequeueReusableCell(for: indexPath)
-        cell.configure(categories: presenter.configureCategories(for: indexPath))
+        let cell: ProductCell = collectionView.dequeueReusableCell(for: indexPath)
+        cell.configureProducts(products: presenter.configureProducts(for: indexPath))
         return cell
         
     }
 }
 
 // MARK: UICollectionViewDelegate
-extension HomeVC: UICollectionViewDelegate {
+extension ProductsVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let id = presenter.categories[indexPath.row].id ?? ""
-        let productsVC: ProductsVC = Resolver.resolve(args: id)
-        productsVC.delegate = self
-        productsVC.modalPresentationStyle = .fullScreen
-        presentVC(productsVC)
+        dismiss{ [weak self] in
+            let product = self?.presenter.products[indexPath.row]
+            self?.delegate?.showPopUp(product: product!)
+        }
     }
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
-extension HomeVC: UICollectionViewDelegateFlowLayout {
+extension ProductsVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = CGSize(width: (collectionView.frame.width/3),
-                          height: collectionView.frame.height/3)
+        let size = CGSize(width: (collectionView.frame.width/2),
+                          height: collectionView.frame.height/2)
         return size
     }
     
@@ -72,18 +75,4 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-}
-
-
-extension HomeVC: ProductsVCDelegate {
-    func showPopUp(product: Products) {
-        let productPopUpVC: ProductPopUPVC = Resolver.resolve(args: product)
-        self.addChild(productPopUpVC)
-        productPopUpVC.view.frame = self.view.frame
-        self.view.addSubview(productPopUpVC.view)
-        productPopUpVC.didMove(toParent: self)
-
-    }
-    
-    
 }
