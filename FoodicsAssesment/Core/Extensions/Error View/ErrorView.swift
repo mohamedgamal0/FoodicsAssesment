@@ -32,8 +32,10 @@ class ErrorView: UIView {
         errorSubtitle.text = errorSubTitle
         refeshImage.image = errorImage
         tryAgainButton.isHidden = buttonIshidden
+        tryAgainButton.layer.cornerRadius = 8
+        tryAgainButton.layer.masksToBounds = true
     }
-        
+    
     @IBAction private func tryAgainButtonTapped() {
         errorbuttonTryAgainDidtap()
     }
@@ -43,9 +45,7 @@ class ErrorView: UIView {
 extension UIViewController {
     
     var errorView: ErrorView {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        let window = appDelegate.window!
+        let window = AppDelegate.keyWindow ?? UIWindow()
         
         for view in self.view.subviews where view is ErrorView {
             return view as! ErrorView
@@ -58,7 +58,7 @@ extension UIViewController {
     
     func showErrorView(overContext: Bool = false,
                        onView view: UIView? = nil,
-                       errorTitle: String = "error Message DefaultTitle" ,
+                       errorTitle: String = "Error",
                        buttonIshidden: Bool = false,
                        errorSubTitle: String =  "API Failure Error",
                        buttonTitle: String =  "Try Again",
@@ -72,8 +72,7 @@ extension UIViewController {
                          errorImage: errorImage,
                          buttonIshidden: buttonIshidden)
         if overContext == true {
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let window = appDelegate.window!
+            let window = AppDelegate.keyWindow ?? UIWindow()
             for view in window.subviews where view is ErrorView {
                 return
             }
@@ -105,8 +104,9 @@ extension UIViewController {
         }
         self.errorView.removeFromSuperview()
     }
-        
+    
     @objc func tryAgainBtnTappedFromErrorView() {
         fatalError("Need to be implemented")
     }
+    
 }

@@ -33,8 +33,7 @@ extension UIViewController {
     
     var loader: LoaderView {
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let window = appDelegate.window!
+        let window = AppDelegate.keyWindow ?? UIWindow()
         for view in window.subviews where view is LoaderView {
             return view as! LoaderView
         }
@@ -54,8 +53,7 @@ extension UIViewController {
             loader.activityIndicator.color = UIColor(red: 0.64, green: 0.76, blue: 0.33, alpha: 1.00)
         }
         if overContext {
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            let window = appDelegate.window!
+            let window = AppDelegate.keyWindow ?? UIWindow()
             for view in window.subviews where view is LoaderView {
                 return
             }
@@ -92,6 +90,7 @@ extension UIViewController {
                 self.view.sendSubviewToBack(view)
             }
         }
+        
         self.loader.removeFromSuperview()
     }
     
