@@ -1,0 +1,19 @@
+//
+//  Debug.xcconfig
+//  FoodicsAssesment
+//
+//  Created by mohamed gamal on 12/17/20.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+OTHER_SWIFT_FLAGS = -DDEBUG
+SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG
+
+TIMEOUT_INTERVAL       = 60
+PROTOCOL               = https
+TOKEN_EXPIRATION_CODE  = 403
+PORT                   = 443
+BASE_DOMAIN            = api.foodics.dev
+
