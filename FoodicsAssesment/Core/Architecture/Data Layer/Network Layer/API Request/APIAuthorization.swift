@@ -16,7 +16,7 @@ enum APIAuthorization {
             return []
         case .barerToken:
             let token = FoodicsConstants.foodicsApiToken
-            return ["Authorization": "token \(token)"]
+            return ["Authorization": "Bearer \(token)"]
         }
     }
 }

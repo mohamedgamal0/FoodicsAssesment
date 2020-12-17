@@ -61,7 +61,8 @@ class BaseAPIRequest: APIRequestProtocol {
         path = ""
         authorization = .none
         method = .get
-        headers = ["Content-Type": "application/json"]
+        headers = ["Content-Type": "application/json",
+                   "Accept":"application/json"]
     }
     func queryParams() -> [String: String]? {
         return nil
