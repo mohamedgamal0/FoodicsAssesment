@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED50EB40258E1349009B10DF /* FoodicsAssesment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED50EB3E258E1349009B10DF /* FoodicsAssesment.xcdatamodeld */; };
 		EDB13890258B78D800461A4D /* Error+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB1388F258B78D800461A4D /* Error+Extension.swift */; };
 		EDB1389E258B7B8C00461A4D /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB1389D258B7B8C00461A4D /* UIImageView+Extension.swift */; };
 		EDB138BB258BC68C00461A4D /* NavigationItem+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB138BA258BC68C00461A4D /* NavigationItem+Extention.swift */; };
@@ -40,7 +41,6 @@
 		EDB139C8258E033000461A4D /* ProductsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB139C7258E033000461A4D /* ProductsRepository.swift */; };
 		EDB139D1258E044500461A4D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB139D0258E044500461A4D /* CoreDataManager.swift */; };
 		EDB139D6258E046000461A4D /* DataBaseManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB139D5258E046000461A4D /* DataBaseManagerProtocol.swift */; };
-		EDB139E5258E079B00461A4D /* FoodicsAssesment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EDB139E3258E079B00461A4D /* FoodicsAssesment.xcdatamodeld */; };
 		EDCBE899258B402D00FC618B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE898258B402D00FC618B /* AppDelegate.swift */; };
 		EDCBE89B258B402D00FC618B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCBE89A258B402D00FC618B /* SceneDelegate.swift */; };
 		EDCBE8A0258B402D00FC618B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDCBE89E258B402D00FC618B /* Main.storyboard */; };
@@ -113,6 +113,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED50EB3F258E1349009B10DF /* FoodicsAssesment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodicsAssesment.xcdatamodel; sourceTree = "<group>"; };
 		EDB1388F258B78D800461A4D /* Error+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Error+Extension.swift"; sourceTree = "<group>"; };
 		EDB1389D258B7B8C00461A4D /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		EDB138BA258BC68C00461A4D /* NavigationItem+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NavigationItem+Extention.swift"; sourceTree = "<group>"; };
@@ -146,7 +147,6 @@
 		EDB139C7258E033000461A4D /* ProductsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsRepository.swift; sourceTree = "<group>"; };
 		EDB139D0258E044500461A4D /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		EDB139D5258E046000461A4D /* DataBaseManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBaseManagerProtocol.swift; sourceTree = "<group>"; };
-		EDB139E4258E079B00461A4D /* FoodicsAssesment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FoodicsAssesment.xcdatamodel; sourceTree = "<group>"; };
 		EDCBE895258B402D00FC618B /* FoodicsAssesment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodicsAssesment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDCBE898258B402D00FC618B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EDCBE89A258B402D00FC618B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -306,7 +306,7 @@
 		EDB1397C258DFF8C00461A4D /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				EDB139E3258E079B00461A4D /* FoodicsAssesment.xcdatamodeld */,
+				ED50EB3E258E1349009B10DF /* FoodicsAssesment.xcdatamodeld */,
 				EDB1397E258DFFB200461A4D /* CategoryEntity+CoreDataClass.swift */,
 				EDB13983258DFFCC00461A4D /* ProductEnitiy+CoreDataClass.swift */,
 				EDB13988258DFFF900461A4D /* CategoryProductsEntity+CoreDataClass.swift */,
@@ -958,7 +958,7 @@
 				EDB13978258DFF5A00461A4D /* ProductModel.swift in Sources */,
 				EDCBE93C258B490A00FC618B /* Reachability.swift in Sources */,
 				EDCBE942258B4BB400FC618B /* APIRequestProtocol.swift in Sources */,
-				EDB139E5258E079B00461A4D /* FoodicsAssesment.xcdatamodeld in Sources */,
+				ED50EB40258E1349009B10DF /* FoodicsAssesment.xcdatamodeld in Sources */,
 				EDB13994258E005000461A4D /* CategoryEntity+CoreDataProperties.swift in Sources */,
 				EDCBE89B258B402D00FC618B /* SceneDelegate.swift in Sources */,
 				EDB139D1258E044500461A4D /* CoreDataManager.swift in Sources */,
@@ -1364,14 +1364,13 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		EDB139E3258E079B00461A4D /* FoodicsAssesment.xcdatamodeld */ = {
+		ED50EB3E258E1349009B10DF /* FoodicsAssesment.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				EDB139E4258E079B00461A4D /* FoodicsAssesment.xcdatamodel */,
+				ED50EB3F258E1349009B10DF /* FoodicsAssesment.xcdatamodel */,
 			);
-			currentVersion = EDB139E4258E079B00461A4D /* FoodicsAssesment.xcdatamodel */;
-			name = FoodicsAssesment.xcdatamodeld;
-			path = "../../../../../../Downloads/FoodicsAssesment/FoodicsAssesment/Core/Data Layer/CoreData/FoodicsAssesment.xcdatamodeld";
+			currentVersion = ED50EB3F258E1349009B10DF /* FoodicsAssesment.xcdatamodel */;
+			path = FoodicsAssesment.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

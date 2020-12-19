@@ -14,4 +14,5 @@ protocol BaseViewProtocol: AnyObject {
     func showErrorView( errorMessage: String)
     func setNavBarImage()
     func dismiss()
+    func popVC()
 }
