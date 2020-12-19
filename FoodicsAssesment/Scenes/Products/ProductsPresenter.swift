@@ -11,23 +11,26 @@ class ProductsPresenter: BasePresenter<ProductsView> {
     var categoryId: String!
     private var productsUseCase: ProductsUseCase!
     internal var products: [ProductModel] = []
-    
+    private var pageNumber = 1
+
     override func viewDidAttach() {
-        getAllProducts()
+        getProducts()
     }
     
     override func tryAgainBtnTappedFromErrorView() {
+        pageNumber = 1
+        products.removeAll()
+        view.reloadCollectionView()
         view.hideDefaultErrorView()
-        getAllProducts()
+        getProducts()
     }
     
-    func getAllProducts() {
+    func getProducts() {
         view.showLoader()
         productsUseCase = ProductsUseCase(categoryId: categoryId,
-                                          pageSize: 50,
-                                          pageNumber: 1)
+                                          pageNumber: pageNumber)
         productsUseCase.process([ProductModel].self).then { [weak self] products in
-            self?.products = products
+            self?.products.append(contentsOf: products)
         }.catch { [weak self] (error)in
             self?.view.showErrorView(errorMessage: error.message)
         }.always { [weak self] in
@@ -35,7 +38,12 @@ class ProductsPresenter: BasePresenter<ProductsView> {
             self?.view.hideLoader()
         }
     }
-    
+
+    func loadMore() {
+        pageNumber = pageNumber + 1
+        getProducts()
+    }
+
     //MARK: - collectionView Methods
     
     func numberOfRows() -> Int {
@@ -44,7 +52,6 @@ class ProductsPresenter: BasePresenter<ProductsView> {
     
     func product(for indexPath: IndexPath) -> ProductModel {
         return products[indexPath.row]
-        
     }
     
 }

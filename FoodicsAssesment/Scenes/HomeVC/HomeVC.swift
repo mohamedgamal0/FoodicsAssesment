@@ -23,6 +23,9 @@ class HomeVC: BaseVC<HomeView, HomePresenter>, HomeView {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(cellType: CategoryCell.self)
+        collectionView.register(supplementaryViewType: PaginationReusableView.self,
+                                kind: .footer)
+
     }
     func reloadCollectionView() {
         self.collectionView.reloadData()
@@ -55,6 +58,15 @@ extension HomeVC: UICollectionViewDelegate {
         productsVC.delegate = self
         pushVC(viewController: productsVC)
     }
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        let footerView: PaginationReusableView
+        footerView = collectionView.dequeueReusableSupplementaryView(ofKind: .footer,
+                                                                     for: indexPath)
+        footerView.paginationDelegate = self
+        return footerView
+    }
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
@@ -71,6 +83,13 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.bounds.width , height: 150)
+    }
+
 }
 
 
@@ -81,8 +100,18 @@ extension HomeVC: ProductsVCDelegate {
         productPopUpVC.view.frame = self.view.frame
         self.view.addSubview(productPopUpVC.view)
         productPopUpVC.didMove(toParent: self)
+    }
+}
 
+extension HomeVC: PaginationDelegate {
+    func scrollToTop() {
+        collectionView.scrollToItem(at: IndexPath(row: 0,
+                                                  section: 0),
+                                    at: .top,
+                                    animated: true)
     }
     
-    
+    func loadMore() {
+        presenter.loadMore()
+    }
 }

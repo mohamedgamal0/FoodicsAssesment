@@ -30,8 +30,8 @@ class LocalProductsDataSource: ProductsDataSource {
         let fetchRequest: NSFetchRequest<ProductEntity> = ProductEntity.fetchRequest()
         let predicate = NSPredicate(format: "categoryId = %@", categoryId)
         fetchRequest.predicate = predicate
-        //        fetchRequest.fetchOffset = pageSize * (pageNumber - 1)
-        //        fetchRequest.fetchLimit = pageSize
+        fetchRequest.fetchOffset = pageSize * (pageNumber - 1)
+        fetchRequest.fetchLimit = pageSize
         return dataBaseManager
             .fetch(query: fetchRequest, outputType: ProductEntity.self)
             .then { (products) -> Promise<[ProductModel]> in

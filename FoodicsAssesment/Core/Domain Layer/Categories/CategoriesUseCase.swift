@@ -12,14 +12,14 @@ class CategoriesUseCase: BaseUseCase {
     @Injected private var repository: CategoriesRepositoryProtocol
     private var pageSize: Int, pageNumber: Int
 
-    init(pageSize: Int = 1000, pageNumber: Int)  {
+    init(pageSize: Int = 50, pageNumber: Int)  {
         self.pageSize = pageSize
         self.pageNumber = pageNumber
         super.init()
     }
 
-    func update(pageSize: Int = 50 , pageNumber: Int) {
-        self.pageSize = pageSize
+    func update(pageSize: Int? = nil , pageNumber: Int) {
+        self.pageSize = pageSize ?? self.pageSize
         self.pageNumber = pageNumber
     }
 

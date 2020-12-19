@@ -27,6 +27,11 @@ class ProductsUseCase: BaseUseCase {
         self.pageSize = pageSize
         self.pageNumber = pageNumber
     }
+    
+    func update(pageSize: Int? = nil , pageNumber: Int) {
+        self.pageSize = pageSize ?? self.pageSize
+        self.pageNumber = pageNumber
+    }
 
     override func process<T>(_ outputType: T.Type) -> Promise<T> {
         return repository.fetchStock(categoryId: categoryId, pageSize: pageSize, pageNumber: pageNumber) as! Promise<T>

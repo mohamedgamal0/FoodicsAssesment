@@ -27,6 +27,9 @@ class ProductsVC: BaseVC<ProductsView, ProductsPresenter>, ProductsView {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(cellType: ProductCell.self)
+        collectionView.register(supplementaryViewType: PaginationReusableView.self,
+                                kind: .footer)
+
     }
     func reloadCollectionView() {
         self.collectionView.reloadData()
@@ -59,20 +62,50 @@ extension ProductsVC: UICollectionViewDelegate {
             self?.delegate?.showPopUp(product: product!)
         })
     }
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        let footerView: PaginationReusableView
+        footerView = collectionView.dequeueReusableSupplementaryView(ofKind: .footer,
+                                                                     for: indexPath)
+        footerView.paginationDelegate = self
+        return footerView
+    }
+
 }
 
 // MARK: UICollectionViewDelegateFlowLayout
 extension ProductsVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = CGSize(width: (collectionView.frame.width/2),
-                          height: collectionView.frame.height/2)
+        let size = CGSize(width: ((collectionView.bounds.width - 15) / 4),
+                          height: collectionView.bounds.height/4)
         return size
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 5
     }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 5
+    }
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForFooterInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.bounds.width , height: 150)
+    }
+
+}
+extension ProductsVC: PaginationDelegate {
+    func scrollToTop() {
+        collectionView.scrollToItem(at: IndexPath(row: 0,
+                                                  section: 0),
+                                    at: .top,
+                                    animated: true)
+    }
+
+    func loadMore() {
+        presenter.loadMore()
     }
 }
