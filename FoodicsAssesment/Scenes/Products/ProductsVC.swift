@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ProductsVCDelegate: class {
-    func showPopUp(product: Products)
+    func showPopUp(product: ProductModel)
 }
 protocol ProductsView: BaseViewProtocol {
     func reloadCollectionView()
@@ -45,7 +45,7 @@ extension ProductsVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: ProductCell = collectionView.dequeueReusableCell(for: indexPath)
-        cell.configureProducts(products: presenter.configureProducts(for: indexPath))
+        cell.configureProducts(products: presenter.product(for: indexPath))
         return cell
         
     }
@@ -55,8 +55,9 @@ extension ProductsVC: UICollectionViewDataSource {
 extension ProductsVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         dismiss{ [weak self] in
-            let product = self?.presenter.products[indexPath.row]
-            self?.delegate?.showPopUp(product: product!)
+            guard let self = self else {return}
+            let product = self.presenter.product(for:indexPath)
+            self.delegate?.showPopUp(product: product)
         }
     }
 }

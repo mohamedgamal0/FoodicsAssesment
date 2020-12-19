@@ -6,8 +6,8 @@
 //
 
 import Foundation
-class CategoriesApiRequest: BaseAPIRequest {
-    override init() {
+class GetCategoriesApiRequest: BaseAPIRequest {
+     init(pageSize: Int, pageNumber: Int) {
         super.init()
         method = .get
         authorization = .barerToken

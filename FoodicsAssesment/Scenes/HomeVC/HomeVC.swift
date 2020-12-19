@@ -41,7 +41,7 @@ extension HomeVC: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: CategoryCell = collectionView.dequeueReusableCell(for: indexPath)
-        cell.configure(categories: presenter.configureCategories(for: indexPath))
+        cell.configure(category: presenter.category(for: indexPath))
         return cell
         
     }
@@ -50,7 +50,7 @@ extension HomeVC: UICollectionViewDataSource {
 // MARK: UICollectionViewDelegate
 extension HomeVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let id = presenter.categories[indexPath.row].id ?? ""
+        let id = presenter.category(for: indexPath).id ?? ""
         let productsVC: ProductsVC = Resolver.resolve(args: id)
         productsVC.delegate = self
         productsVC.modalPresentationStyle = .fullScreen
@@ -76,7 +76,7 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
 
 
 extension HomeVC: ProductsVCDelegate {
-    func showPopUp(product: Products) {
+    func showPopUp(product: ProductModel) {
         let productPopUpVC: ProductPopUPVC = Resolver.resolve(args: product)
         self.addChild(productPopUpVC)
         productPopUpVC.view.frame = self.view.frame

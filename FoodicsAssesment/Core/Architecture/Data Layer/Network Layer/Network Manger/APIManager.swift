@@ -20,8 +20,7 @@ class APIManager: NetworkManagerProtocol {
     
     private func call<T: Codable>(apiRequest: APIRequestProtocol,
                                   providerType: APIRequestProviderProtocol,
-                                  outputType: T.Type
-    ) -> Promise<T> {
+                                  outputType: T.Type) -> Promise<T> {
         let promise = Promise<T>.pending()
         providerType.perform(apiRequest: apiRequest, completion: { [weak self] result in
             if let result = self?.validate(result: result, outputType: outputType) {

@@ -10,23 +10,24 @@ import Foundation
 class ProductsPresenter: BasePresenter<ProductsView> {
     var categoryId: String!
     private var productsUseCase: ProductsUseCase!
-    internal var products: [Products] = []
+    internal var products: [ProductModel] = []
     
     override func viewDidAttach() {
         getAllProducts()
     }
     
     override func tryAgainBtnTappedFromErrorView() {
+        view.hideDefaultErrorView()
         getAllProducts()
     }
     
     func getAllProducts() {
-        productsUseCase = ProductsUseCase(catId: categoryId)
-        productsUseCase.willProcess = {[weak self] in
-            self?.view.showLoader()
-        }
-        productsUseCase?.execute(BaseResponse<[Products]>.self).then { [weak self] response in
-            self?.products = response.data ?? []
+        view.showLoader()
+        productsUseCase = ProductsUseCase(categoryId: categoryId,
+                                          pageSize: 50,
+                                          pageNumber: 1)
+        productsUseCase.process([ProductModel].self).then { [weak self] products in
+            self?.products = products
         }.catch { [weak self] (error)in
             self?.view.showErrorView(errorMessage: error.message)
         }.always { [weak self] in
@@ -41,7 +42,7 @@ class ProductsPresenter: BasePresenter<ProductsView> {
         return products.count
     }
     
-    func configureProducts(for indexPath: IndexPath) -> Products {
+    func product(for indexPath: IndexPath) -> ProductModel {
         return products[indexPath.row]
         
     }

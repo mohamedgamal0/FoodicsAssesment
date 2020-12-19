@@ -29,7 +29,7 @@ extension Resolver {
         }
         register { (_, args) -> ProductPopUPPresenter in
             let presenter = ProductPopUPPresenter()
-            presenter.product = args as? Products
+            presenter.product = args as? ProductModel
             return presenter
         }
     }

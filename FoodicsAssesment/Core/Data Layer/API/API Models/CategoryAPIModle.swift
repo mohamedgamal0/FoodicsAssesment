@@ -1,5 +1,5 @@
 //
-//  Categories.swift
+//  CategoryAPIModle.swift
 //  FoodicsAssesment
 //
 //  Created by mohamed gamal on 12/17/20.
@@ -12,8 +12,11 @@ struct BaseResponse<T: Codable>: Codable {
 }
 
 //MARK: - CategoriesModel
-struct Categories: Codable {
+struct CategoryAPIModel: Codable {
     let id, name, image: String?
+    func toCategoryModel() -> CategoryModel {
+        CategoryModel(categoryAPIModel: self)
+    }
 }
 
 // MARK: - Meta

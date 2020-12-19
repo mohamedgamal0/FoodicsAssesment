@@ -8,7 +8,7 @@
 import Foundation
 
 class ProductPopUPPresenter: BasePresenter<ProductPopUPView> {
-    var product: Products!
+    var product: ProductModel!
     override func viewDidAttach() {
         self.view.showProduct(product: product)
     }

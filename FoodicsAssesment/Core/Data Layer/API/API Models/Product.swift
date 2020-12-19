@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct Products: Codable {
+struct ProductAPIModel: Codable {
     let id, name, image: String?
     let price: Double?
+    
+    func toProductModel() -> ProductModel {
+        ProductModel(productAPIModel: self)
+    }
+
 }

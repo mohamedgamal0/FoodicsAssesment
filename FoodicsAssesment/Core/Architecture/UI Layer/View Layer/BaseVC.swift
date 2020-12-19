@@ -9,8 +9,10 @@ import Foundation
 import UIKit
 
 class BaseVC<ViewProtocol, Presenter>: UIViewController, BaseViewProtocol where Presenter: BasePresenter<ViewProtocol> {
-    
+
+
     @Injected var internetManager: InternetManagerProtocol
+    var _loader: LoaderView?
     lazy var presenter: Presenter = {
         let presenter: Presenter = Resolver.resolve(args: presenterArgs)
         presenterArgs = nil
@@ -28,27 +30,7 @@ class BaseVC<ViewProtocol, Presenter>: UIViewController, BaseViewProtocol where 
         setupViews()
     }
     open func setupViews() {}
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        presenter.viewWillAppear()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        presenter.viewDidAppear()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        presenter.viewWillDisappear()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        presenter.viewDidDisappear()
-    }
-    
+        
     func showLoader() {
         showAppLoader()
     }
@@ -63,8 +45,13 @@ class BaseVC<ViewProtocol, Presenter>: UIViewController, BaseViewProtocol where 
     
     func setNavBarImage() {
         let logoImage = UIImage(named: "foodics-logo")
-        setNavigationItem(image: logoImage!, imageFrameSize: CGSize(width: 60, height: 30))
+        setNavigationItem(image: logoImage!,
+                          imageFrameSize: CGSize(width: 60, height: 30))
     }
-    
+
+    @objc func tryAgainBtnTappedFromErrorView() {
+        presenter.tryAgainBtnTappedFromErrorView()
+    }
+
 
 }

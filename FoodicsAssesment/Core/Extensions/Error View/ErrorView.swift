@@ -42,7 +42,7 @@ class ErrorView: UIView {
     
 }
 
-extension UIViewController {
+extension BaseVC {
     
     var errorView: ErrorView {
         let window = AppDelegate.keyWindow ?? UIWindow()
@@ -104,9 +104,9 @@ extension UIViewController {
         }
         self.errorView.removeFromSuperview()
     }
-    
-    @objc func tryAgainBtnTappedFromErrorView() {
-        fatalError("Need to be implemented")
+    func hideDefaultErrorView() {
+        hideErrorView()
     }
-    
+
+
 }

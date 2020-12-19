@@ -20,8 +20,8 @@ class CategoryCell: UICollectionViewCell {
         self.continerView.layer.borderColor = UIColor.black.cgColor
     }
     
-    func configure(categories: Categories?) {
-        catImage.setImage(with: categories?.image ?? "")
-        catTitle.text = categories?.name ?? ""
+    func configure(category: CategoryModel) {
+        catImage.setImage(with: category.image ?? "")
+        catTitle.text = category.name ?? ""
     }
 }

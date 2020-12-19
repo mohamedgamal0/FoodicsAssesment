@@ -11,23 +11,22 @@ import Foundation
 class HomePresenter: BasePresenter<HomeView> {
     
     private var categoriesUseCase: CategoriesUseCase!
-    internal var categories: [Categories] = []
+    private var categories: [CategoryModel] = []
     
     override func viewDidAttach() {
         getAllCategories()
     }
     
     override func tryAgainBtnTappedFromErrorView() {
+        view.hideDefaultErrorView()
         getAllCategories()
     }
     
     func getAllCategories() {
-        categoriesUseCase = CategoriesUseCase()
-        categoriesUseCase.willProcess = {[weak self] in
-            self?.view.showLoader()
-        }
-        categoriesUseCase?.execute(BaseResponse<[Categories]>.self).then { [weak self] response in
-            self?.categories = response.data ?? []
+        view.showLoader()
+        categoriesUseCase = CategoriesUseCase(pageNumber: 1)
+        categoriesUseCase.process([CategoryModel].self).then { [weak self] categories in
+            self?.categories = categories
         }.catch { [weak self] (error)in
             self?.view.showErrorView(errorMessage: error.message)
         }.always { [weak self] in
@@ -42,7 +41,7 @@ class HomePresenter: BasePresenter<HomeView> {
         return categories.count
     }
     
-    func configureCategories(for indexPath: IndexPath) -> Categories {
+    func category(for indexPath: IndexPath) -> CategoryModel {
         return categories[indexPath.row]
         
     }

@@ -29,18 +29,13 @@ class LoaderView: UIView {
     
 }
 
-extension UIViewController {
+extension BaseVC {
     
     var loader: LoaderView {
-        
-        let window = AppDelegate.keyWindow ?? UIWindow()
-        for view in window.subviews where view is LoaderView {
-            return view as! LoaderView
+        if _loader == nil {
+            _loader =  LoaderView.instanceFromNib()
         }
-        for view in self.view.subviews where view is LoaderView {
-            return view as! LoaderView
-        }
-        return LoaderView.instanceFromNib()
+        return _loader!
     }
     
     func showAppLoader(overContext: Bool = false,

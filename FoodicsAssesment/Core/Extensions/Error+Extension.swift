@@ -14,11 +14,15 @@ extension NSError {
     static let cancelError = NSError(domain: "cancel Error",
                                      code: 4000,
                                      userInfo: nil)
-    
+    static let notFound = NSError(domain: "Not found",
+                                     code: 4000,
+                                     userInfo: nil)
+
     static let noInternet = NSError(domain: "NoInternet Error",
                                     code: 5005,
                                     userInfo: nil)
 }
+
 extension Error {
     
     var message: String {

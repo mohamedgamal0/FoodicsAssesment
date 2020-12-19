@@ -9,7 +9,7 @@ import UIKit
 
 protocol ProductPopUPView: BaseViewProtocol {
     
-    func showProduct(product: Products?)
+    func showProduct(product: ProductModel)
 }
 
 class ProductPopUPVC: BaseVC<ProductPopUPView, ProductPopUPPresenter>, ProductPopUPView {
@@ -27,10 +27,10 @@ class ProductPopUPVC: BaseVC<ProductPopUPView, ProductPopUPPresenter>, ProductPo
         self.view.layer.cornerRadius = 8
     }
     
-    func showProduct(product: Products?) {
-        productImage.setImage(with: product?.image ?? "")
-        productTitle.text = product?.name ?? ""
-        productPrice.text = "Price: \(product?.price ?? 0.0)"
+    func showProduct(product: ProductModel) {
+        productImage.setImage(with: product.image ?? "")
+        productTitle.text = product.name ?? ""
+        productPrice.text = "Price: \(product.price ?? 0.0)"
     }
 
     func dismissView() {

@@ -8,28 +8,28 @@
 import Foundation
 import Promises
 
-class ProductsUseCase: BaseCodableUseCase {
+class ProductsUseCase: BaseUseCase {
     
-    var catId: String
-    init(catId: String) {
-        self.catId = catId
+    @Injected private var repository: ProductsRepositoryProtocol
+    private var categoryId: String
+    private var pageSize: Int, pageNumber: Int
+
+    init(categoryId: String,
+         pageSize:Int = 50,
+         pageNumber: Int = 1) {
+        self.categoryId = categoryId
+        self.pageSize = pageSize
+        self.pageNumber = pageNumber
+
     }
-    override func process<T: Codable>(_ outputType: T.Type) -> Promise<T> {
-        return performProducts(outputType).then(getProducts)
+
+    func update(pageSize: Int = 50 , pageNumber: Int) {
+        self.pageSize = pageSize
+        self.pageNumber = pageNumber
     }
-    
-    private func performProducts<T: Codable>(_ outPutType: T.Type) -> Promise<T> {
-        let getProductsRequest = ProductsApiRequest(catId: catId)
-        return network.perform(apiRequest: getProductsRequest,
-                               providerType: self.providers[0],
-                               outputType: outPutType)
-    }
-    
-    private func getProducts<T: Codable>(_ ProductsResponse: T) -> Promise<T> {
-        if let Products = ProductsResponse as? BaseResponse<Products> {
-            print(Products)
-        }
-        return Promise<T>.init(ProductsResponse)
+
+    override func process<T>(_ outputType: T.Type) -> Promise<T> {
+        return repository.fetchStock(categoryId: categoryId, pageSize: pageSize, pageNumber: pageNumber) as! Promise<T>
     }
 }
 

@@ -10,6 +10,7 @@ import Foundation
 protocol BaseViewProtocol: AnyObject {
     func showLoader()
     func hideLoader()
+    func hideDefaultErrorView()
     func showErrorView( errorMessage: String)
     func setNavBarImage()
     func dismiss()

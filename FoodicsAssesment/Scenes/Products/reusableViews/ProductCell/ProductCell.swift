@@ -21,9 +21,9 @@ class ProductCell: UICollectionViewCell {
         self.continerView.layer.borderColor = UIColor.black.cgColor
     }
     
-    func configureProducts(products: Products?) {
-        productImage.setImage(with: products?.image ?? "")
-        productTitle.text = products?.name ?? ""
-        priceLabel.text = "Price: \(products?.price ?? 0.0)"
+    func configureProducts(products: ProductModel) {
+        productImage.setImage(with: products.image ?? "")
+        productTitle.text = products.name ?? ""
+        priceLabel.text = "Price: \(products.price ?? 0.0)"
     }
 }

@@ -7,10 +7,12 @@
 
 import Foundation
 
-class ProductsApiRequest: BaseAPIRequest {
-    var catId: String
-    init(catId: String) {
-        self.catId = catId
+class GetProductsApiRequest: BaseAPIRequest {
+    var categoryId: String
+    init(categoryId: String,
+         pageSize:Int = 50,
+         pageNumber: Int) {
+        self.categoryId = categoryId
         super.init()
         method = .get
         authorization = .barerToken
@@ -18,6 +20,6 @@ class ProductsApiRequest: BaseAPIRequest {
     }
     
     override func queryParams() -> [String : String]? {
-        return ["category":catId]
+        return ["category":categoryId]
     }
 }

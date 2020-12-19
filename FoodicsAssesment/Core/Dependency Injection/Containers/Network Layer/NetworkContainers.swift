@@ -7,6 +7,8 @@
 
 import Foundation
 
+import Foundation
+
 extension Resolver {
     static func registerNetworkLayerContainers() {
         register { APIManager() as NetworkManagerProtocol }
@@ -14,6 +16,8 @@ extension Resolver {
         register { InternetConnectionManager() as InternetManagerProtocol }
             .scope(Resolver.application)
         register { APIRequestProvider() as APIRequestProviderProtocol }
+            .scope(Resolver.application)
+        register { CoreDataStackManager(containerName: "FoodicsAssesment") as DataBaseManagerProtocol }
             .scope(Resolver.application)
     }
 }
