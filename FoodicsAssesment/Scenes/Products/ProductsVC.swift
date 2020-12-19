@@ -54,11 +54,10 @@ extension ProductsVC: UICollectionViewDataSource {
 // MARK: UICollectionViewDelegate
 extension ProductsVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        dismiss{ [weak self] in
-            guard let self = self else {return}
-            let product = self.presenter.product(for:indexPath)
-            self.delegate?.showPopUp(product: product)
-        }
+        popVC(completion: { [weak self] in
+            let product = self?.presenter.product(for:indexPath)
+            self?.delegate?.showPopUp(product: product!)
+        })
     }
 }
 

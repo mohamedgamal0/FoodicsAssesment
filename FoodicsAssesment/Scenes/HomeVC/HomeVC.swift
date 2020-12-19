@@ -53,8 +53,7 @@ extension HomeVC: UICollectionViewDelegate {
         let id = presenter.category(for: indexPath).id ?? ""
         let productsVC: ProductsVC = Resolver.resolve(args: id)
         productsVC.delegate = self
-        productsVC.modalPresentationStyle = .fullScreen
-        presentVC(productsVC)
+        pushVC(viewController: productsVC)
     }
 }
 
